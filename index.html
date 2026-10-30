@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Painel dos resultados da pesquisa — Vinicius Alves Rodrigues</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Pesquisa de Doutorado · Vinicius Alves Rodrigues</p>
+      <h1>Resultados dos questionários</h1>
+      <p>Explore as respostas dos mesmos participantes antes e depois da
+        intervenção. A base reúne <strong>61 pares</strong>: 10 do 1º EDI,
+        27 do 2º EDI e 24 do 3º EDI.</p>
+      <p>Os instrumentos registram atitudes, percepções e compreensão declarada,
+        em alternativas de 1 a 5.</p>
+    </header>
+
+    <aside class="note">
+      Após o ajuste de Holm para as 39 comparações por item, nenhuma diferença
+      permaneceu estatisticamente significativa a 5%. Os movimentos são
+      descritivos e devem ser interpretados junto aos registros qualitativos.
+      Não constituem, isoladamente, prova de aprendizagem ou efeito causal da IA.
+    </aside>
+
+    <noscript>
+      <p class="note">Ative o JavaScript do navegador para consultar o painel.</p>
+    </noscript>
+
+    <section class="card" aria-labelledby="highlights-title">
+      <h2 id="highlights-title">Movimentos destacados</h2>
+      <p class="small">Cada linha representa um item diferente.
+        Esta seleção não estabelece um ranking entre as turmas.</p>
+      <div class="legend">
+        <span><i class="dot up"></i>Aumentou</span>
+        <span><i class="dot same"></i>Permaneceu igual</span>
+        <span><i class="dot down"></i>Reduziu</span>
+      </div>
+      <div id="summary"></div>
+    </section>
+
+    <section class="card" aria-labelledby="explore-title">
+      <h2 id="explore-title">Explore um item</h2>
+      <div class="filters">
+        <label for="serie">Turma
+          <select id="serie">
+            <option value="1">1º EDI · 10 pares</option>
+            <option value="2" selected>2º EDI · 27 pares</option>
+            <option value="3">3º EDI · 24 pares</option>
+          </select>
+        </label>
+        <label for="item">Item
+          <select id="item"></select>
+        </label>
+      </div>
+
+      <div aria-live="polite" aria-atomic="true">
+        <p id="statement"></p>
+        <div id="chart" class="bar" role="img"></div>
+        <div id="counts" class="legend"></div>
+        <div id="stats" class="stats"></div>
+        <p id="test" class="small"></p>
+        <p id="reverse" class="note" hidden>
+          Q7 afirma que não há riscos éticos. Aqui, as mudanças preservam
+          a resposta original: aumentar significa concordar mais com essa
+          afirmação. A recodificação 6 − resposta foi usada nos escores
+          agregados, não nestas comparações por item.
+        </p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="table-title">
+      <h2 id="table-title">Todas as comparações</h2>
+      <p class="small">Dados agregados, sem identificação individual.
+        As contagens indicam aumentos, permanências e reduções nas respostas.</p>
+      <div class="tablewrap" tabindex="0" role="region"
+        aria-label="Tabela completa com rolagem">
+        <table>
+          <caption>39 comparações por turma e item</caption>
+          <thead>
+            <tr>
+              <th scope="col">Turma / item</th>
+              <th scope="col">Enunciado</th>
+              <th scope="col" class="num">Aumentou</th>
+              <th scope="col" class="num">Igual</th>
+              <th scope="col" class="num">Reduziu</th>
+              <th scope="col" class="num">Média inicial</th>
+              <th scope="col" class="num">Média final</th>
+              <th scope="col" class="num">p Holm</th>
+            </tr>
+          </thead>
+          <tbody id="allrows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <p>Fonte: questionários inicial e final da pesquisa.
+        Teste exato bilateral dos sinais por item; empates apresentados
+        separadamente; ajuste de Holm sobre 39 contrastes.</p>
+      <p>As médias têm finalidade exploratória. Autopercepção, realização
+        experimental e compreensão demonstrada são dimensões relacionadas.
+        Sua interpretação integrada encontra-se na análise dos dados da tese.</p>
+    </footer>
+  </main>
+</body>
+</html>
+
